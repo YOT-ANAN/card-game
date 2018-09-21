@@ -35,12 +35,13 @@ Component{
     render(){
         return(
             <div className="App">
-                 { Array.from(this.state.chars).map((c, i) => 
+                 {  
+                     Array.from(this.state.chars).map((c, i) => 
                     <CharacterCard value = {c} key = {i} attempt={this.state.attempt}
                     activationHandler = {this.activationHandler}/>)
                  }
-                  <p>Round : {this.state.attempt}</p>
-                  <p>{this.state.completed? "YOU WIN" : "Try Again"}</p>
+                  <p className="display">Round : {this.state.attempt}</p>
+                  <p className="display">{this.state.completed? "YOU WIN" : "Try Again"}</p>
             </div>
         )
     }
