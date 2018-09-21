@@ -41,7 +41,7 @@ Component{
                     activationHandler = {this.activationHandler}/>)
                  }
                   <p className="display">Round : {this.state.attempt}</p>
-                  <p className="display">{this.state.attempt==1? "" : this.state.completed? "YOU WIN" : "Try Agian"}</p>
+                  <p className="display">{this.state.completed? "YOU WIN" : this.state.attempt==1? "" :"Try Agian"}</p>
                   
              
             </div>
