@@ -33,7 +33,7 @@
   width: 2em;
   font-size: 2em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin: 1em;
+  margin: 0.5em;
   user-select: none;
  }
  .activeCard {
@@ -41,5 +41,5 @@
   background: pink;
  }
  .display{
-  font-size: 2em;
+  font-size: 1.5em;
  }
