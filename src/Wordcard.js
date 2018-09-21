@@ -21,10 +21,11 @@ Component{
         this.state = prepareStateFromWord(this.props.value)
     }
     activationHandler = (c) => {
-        let guess = [...this.state.guess]+c
+        let guess = [this.state.guess]+c
         this.setState({guess})
-        if(guess.length == this.state.chars.length){
-            if(guess.join('').toString() == this.state.word){
+        console.log(`${c} has been activated.`)
+        if(guess.length === this.state.chars.length){
+            if(guess === this.state.word){
                 this.setState({guess: [], completed: true})
             }else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
@@ -37,8 +38,9 @@ Component{
                  { Array.from(this.state.chars).map((c, i) => 
                  <CharacterCard value = {c} key = {i} attempt={this.state.attempt}
                  activationHandler = {this.activationHandler}/>)}
+                  <p>Round : {this.state.attempt}</p>
             </div>
-        );
+        )
     }
-    activationHandler = c => { console.log(`${c} has been activated.`)}
+  
 }
