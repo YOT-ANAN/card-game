@@ -16,6 +16,10 @@ const prepareStateFromWord = (given_word) => {
 
 export default class WordCard extends
 Component{
+    constructor(props){
+        super(props)
+        this.state = prepareStateFromWord(this.props.value)
+    }
     activationHandler = (c) => {
         let guess = [...this.state.guess]+c
         this.setState({guess})
@@ -30,8 +34,9 @@ Component{
     render(){
         return(
             <div>
-                {Array.from(this.props.value).map((c,i)=>  
-                <CharacterCard value={c} key={i} activationHandler={this.activationHandler}/>)}
+                 { Array.from(this.state.chars).map((c, i) => 
+                 <CharacterCard value = {c} key = {i} attempt={this.state.attempt}
+                 activationHandler = {this.activationHandler}/>)}
             </div>
         );
     }
