@@ -39,6 +39,7 @@ Component{
                  <CharacterCard value = {c} key = {i} attempt={this.state.attempt}
                  activationHandler = {this.activationHandler}/>)}
                   <p>Round : {this.state.attempt}</p>
+                  <p>{this.state.completed? "YOU WIN" : "Try Again"}</p>
             </div>
         )
     }
